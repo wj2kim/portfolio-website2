@@ -1,9 +1,8 @@
 import React from "react";
-
 import Header from "./Header";
 
 export default {
-  title: "Tester/Header",
+  title: "Portfolio/Header",
   component: Header,
 };
 
