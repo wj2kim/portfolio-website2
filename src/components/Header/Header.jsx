@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { DiCssdeck } from "react-icons/di";
+// import FillTistory from "../../../public/images/icons";
 
 import {
   Container,
@@ -15,11 +16,6 @@ import {
 } from "./HeaderStyles";
 
 const Header = () => {
-  useEffect(
-    () => console.log("can i", document.querySelector(".video-wrapper")),
-    []
-  );
-
   return (
     <Container>
       <TitleContainer>
@@ -55,6 +51,7 @@ const Header = () => {
         </SocialIcons>
         <SocialIcons href="https://instagram.com">
           <AiFillGithub size="3rem" />
+          {/* <img src="../../../public/images/icons" alt="" /> */}
         </SocialIcons>
       </IconsContainer>
     </Container>
