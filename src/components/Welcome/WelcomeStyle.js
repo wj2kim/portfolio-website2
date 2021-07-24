@@ -5,6 +5,8 @@ export const Container = styled.div`
   position: absolute;
   display: grid;
   align-items: center;
+	align-content: center;
+	justify-content: center;
   width: 100vw;
   height: 100vh;
   z-index: 1;
@@ -16,14 +18,13 @@ export const Container = styled.div`
   &.fadeIn {
     visibility: visible;
     opacity: 1;
-    transition: visibility 0s linear 0s, opacity 600ms;
   }
 `;
 
 export const Text = styled.h1`
   color: #ffffff;
   font-size: 6rem;
-  text-align: center;
+	margin: 0;
   @media ${(props) => props.theme.breakpoints.sm} {
     font-size: 4rem;
   }
@@ -39,3 +40,49 @@ export const Text = styled.h1`
     }
   }
 `;
+
+export const DetailedContainer = styled.div`
+	margin-top: 12px;
+	display: grid;
+	justify-items: center;
+	grid-gap: 12px;
+`
+
+export const DetailedTitle = styled.p`
+	display: grid;
+	justify-content: center;
+	font-size: 5rem;
+	transition: all 0.3s ease;
+	transform: translateY(60px);
+	@media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 4.5rem;
+  }
+`
+
+export const StarIcon = styled.div`
+	display: grid;
+	margin: 0;
+	justify-content: center;
+	transition: 0.3s ease;
+	color: #ffbf00;
+	border-radius: 50px;
+`;
+
+export const DetailedText = styled.p`
+	font-size: 2.5rem;
+	transform: translateY(60px);
+	.blue {
+		color: #010165;
+		font-weight: bold;
+	}
+	.red { 
+		color: #990623;
+		font-weight: bold;
+	}
+	transition: all 0.3s ease;
+	@media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 1.5rem;
+  }
+`
+
+

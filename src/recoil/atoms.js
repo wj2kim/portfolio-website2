@@ -15,14 +15,18 @@ const localStorageEffect = key => ({setSelf, onSet}) => {
     });
 }
 
-export const nameBannerShownState = atom({
-    key: "isNameBannerShown",
-    default: false,
+export const welcomeAnimationAtom = atom({
+    key: "welcomeAnimationState",
+    default: {
+			"basicAnimation" : false,
+			"detailedAnimation" : true,
+		}
 })
 
-// export const tester = selector({
-//     key: 'welcomeShown',
-//     get: ({get}) => {
-//         return get(localStorage.getItem('isWelcomShown'));
-//     }
-// })
+export const welcomeAnimationSelector = selector({
+    key: 'welcomeAnimationSelector',
+    get: ({get}) => get(welcomeAnimationAtom),
+		set: ({set}, newValue) => {
+			set(welcomeAnimationAtom, newValue)
+		}
+})
