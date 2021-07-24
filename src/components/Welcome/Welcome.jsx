@@ -1,15 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useRecoilValue } from "recoil";
 import { Container, Text } from "./WelcomeStyle";
 import { name } from "../../constants/constants";
+// import { nameBannerShownState } from '../../recoil/atoms';
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const Welcome = () => {
-  const [visible, setVisible] = useState(true);
+  // const [ isNameBannerShown, setNameBanner] = useLocalStorage("isNameBannerShown");
+  // console.log("isNameBannerShown", isNameBannerShown);
+  // const tester = useRecoilValue(nameBannerShownState)
+  // console.log("tester", tester);
+  // const [visible, setVisible] = useState(true);
   const titleEl = useRef(null);
   const containerEl = useRef(null);
   const splitText = [...name];
   let char = 0;
   let timer = null;
-  // let timer = setInterval(onTick, 50);
 
   const createTextMarkup = () => {
     return splitText.map((letter) => `<span>${letter}</span>`).join("");
@@ -21,18 +27,49 @@ const Welcome = () => {
     char++;
     if (char === splitText.length) {
       complete();
-      return;
+      return true;
     }
+    return false;
   };
 
+  const disableScrollOnBody = () => {
+    document.body.classList.add("disable-scroll");
+  };
+
+  const enableScrollOnBody = () => {
+    document.body.classList.remove("disable-scroll");
+  };
+
+  const step = () => {
+    const isFinished = onTick();
+    if (!isFinished) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
   const complete = () => {
-    clearInterval(timer);
-    timer = null;
-    setTimeout(() => containerEl.current.classList.add("fadeOut"), 1000);
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+    setTimeout(() => {
+      containerEl.current.classList.add("fadeOut");
+      enableScrollOnBody();
+      // setNameBanner(true);
+      // nameBannerShownState(true);
+    }, 1000);
   };
 
   useEffect(() => {
-    timer = setInterval(onTick, 40);
+    // if (isNameBannerShown) {
+    //   return;
+    // }
+    if (window.requestAnimationFrame) {
+      window.requestAnimationFrame(step);
+    } else {
+      timer = setInterval(onTick, 30);
+    }
+    disableScrollOnBody();
   }, []);
 
   return (
@@ -41,10 +78,9 @@ const Welcome = () => {
         className="user__name"
         dangerouslySetInnerHTML={{ __html: createTextMarkup() }}
         ref={titleEl}
-        title=""
       ></Text>
     </Container>
-  );
+  )
 };
 
 export default Welcome;

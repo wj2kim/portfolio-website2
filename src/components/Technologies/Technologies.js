@@ -17,6 +17,8 @@ import {
 const Technologies = () => (
   <Section id="tech">
     <SectionDivider />
+    <br />
+    <br />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
       asasdklfjalksfjksjfdsfj asdjfkljs dsfjdj kfjakdfj kdsklf lsdfj lkdjf ls
@@ -25,7 +27,7 @@ const Technologies = () => (
       <ListItem>
         <DiReact size="3rem" />
         <ListContainer>
-          <listTitle>Front-End</listTitle>
+          <ListTitle>Front-End</ListTitle>
           <ListParagraph>
             Experienced with <br /> React.js
           </ListParagraph>
@@ -34,7 +36,7 @@ const Technologies = () => (
       <ListItem>
         <DiFirebase size="3rem" />
         <ListContainer>
-          <listTitle>Back-End</listTitle>
+          <ListTitle>Back-End</ListTitle>
           <ListParagraph>
             Experienced with <br /> Node.js and Databases
           </ListParagraph>
@@ -43,7 +45,7 @@ const Technologies = () => (
       <ListItem>
         <DiZend size="3rem" />
         <ListContainer>
-          <listTitle>UI/UX</listTitle>
+          <ListTitle>UI/UX</ListTitle>
           <ListParagraph>
             Experienced with <br /> Figma
           </ListParagraph>

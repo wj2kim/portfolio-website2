@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #2d3436;
-  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  background: ${(props) => props.theme.colors.background1};
   position: absolute;
   display: grid;
   align-items: center;
@@ -12,12 +11,12 @@ export const Container = styled.div`
   &.fadeOut {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s linear 100ms, opacity 100ms;
+    transition: visibility 0s linear 600ms, opacity 600ms;
   }
   &.fadeIn {
     visibility: visible;
     opacity: 1;
-    transition: visibility 0s linear 0s, opacity 300ms;
+    transition: visibility 0s linear 0s, opacity 600ms;
   }
 `;
 

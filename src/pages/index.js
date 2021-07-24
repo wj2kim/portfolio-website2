@@ -1,6 +1,7 @@
 import Acomplishments from "../components/Acomplishments/Acomplishments";
 import BgAnimation from "../components/BackgroundAnimation/BackgroundAnimation";
 import Intro from "../components/Intro/Intro";
+import Photo from "../components/Photo/Photo";
 import Projects from "../components/Projects/Projects";
 import Technologies from "../components/Technologies/Technologies";
 import Timeline from "../components/TimeLine/TimeLine";
@@ -13,9 +14,10 @@ const Home = () => {
     <>
       <Welcome />
       <Layout>
-        <Section grid>
+        <Section grid full>
           <Intro />
-          <BgAnimation />
+          <Photo />
+          {/* <BgAnimation /> */}
         </Section>
         <Projects />
         <Technologies />

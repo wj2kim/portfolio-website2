@@ -14,7 +14,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "react-hooks",
     ],
     "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -24,6 +25,13 @@
 			{
 				"endOfLine": "auto"
 			}
-		]
+		],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": [
+          "warn",
+          {
+            "additionalHooks": "useRecoilCallback"
+          }
+        ]
     }
 }

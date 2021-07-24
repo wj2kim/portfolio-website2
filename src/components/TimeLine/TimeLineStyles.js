@@ -117,7 +117,7 @@ export const CarouselItemText = styled.p`
     padding-right: 0;
   }
 `
-export const CarouselButtons = styled.div`
+export const CarouselField = styled.div`
   width: 288px;
 
   display: none;

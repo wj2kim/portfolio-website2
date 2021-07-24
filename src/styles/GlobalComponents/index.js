@@ -4,22 +4,26 @@ export const Section = styled.section`
   display: ${(props) => (props.grid ? "grid" : "flex")};
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   padding: ${(props) => (props.nopadding ? "0" : "32px 48px 0")};
-  margin: 0 auto;
+  margin: ${(props) => (props.left ? "0 auto 0 0" : "0 auto" )};
+  height: ${(props) => (props.full ? "calc(100vh - 80px)": "auto")};
+  align-items: ${(props) => (props.center? "center" : props.bottom ? "flex-end" : "")};
+  margin-bottom: ${(props) => (props.bottom? "90px" : "")};
   max-width: 1040px;
   box-sizing: content-box;
   position: relative;
   overflow: hidden;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 
   @media ${(props) => props.theme.breakpoints.md} {
     padding: 24px 48px 0;
     flex-direction: column;
+    margin: 0 auto;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: ${(props) => (props.nopadding ? "0" : "16px 16px 0")};
-
-    width: calc(100vw - 32px);
+    height: ${(props) => (props.full ? "calc(100vh - 155px)": "auto")};
+    margin: 0 auto;
     flex-direction: column;
   }
 `;
@@ -38,7 +42,7 @@ export const SectionTitle = styled.h2`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
-  padding: ${(props) => (props.main ? "58px 0 16px" : "0")};
+  padding: ${(props) => (props.main ? "32px 0 16px" : "0")};
 
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: ${(props) => (props.main ? "56px" : "48px")};
