@@ -50,12 +50,13 @@ export const DetailedContainer = styled.div`
 
 export const DetailedTitle = styled.p`
 	display: grid;
+	margin-bottom: 6px;
 	justify-content: center;
-	font-size: 5rem;
+	font-size: 4.5rem;
 	transition: all 0.3s ease;
 	transform: translateY(60px);
 	@media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 4.5rem;
+    font-size: 3rem;
   }
 `
 
