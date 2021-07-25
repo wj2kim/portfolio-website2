@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const SectionImage = styled.div`
-.image-container {
+.image__container {
   display: flex;
-  height: 430px;
+  margin-bottom: 48px;
+  border: 4px solid hsl(204,23.8%,95.9%);
+  border-style: outset;
   img {
     width: 150px;
     height: 380px;
@@ -22,13 +24,13 @@ export const SectionImage = styled.div`
   }
 }
 @media ${props => props.theme.breakpoints.md}{
-  .image-container{
+  .image__container{
     margin-top:60px;
   }
 }
 
 @media ${props => props.theme.breakpoints.sm}{
-  .image-container{
+  .image__container{
     margin-top:60px;
   }
 }

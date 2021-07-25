@@ -1,6 +1,6 @@
 import React from "react";
-import { AiFillGithub, AiOutlineCopyright } from "react-icons/ai";
-
+import { AiFillGithub, AiOutlineCopyright, AiFillInstagram } from "react-icons/ai";
+import FillTistory from "../../assets/icons/tistory.svg";
 import { SocialIcons } from "../Header/HeaderStyles";
 import {
   CompanyContainer,
@@ -36,14 +36,14 @@ const Footer = () => {
           <Slogan>PAUL WOOJUNG KIM 2021 - ALL RIGHTS RESERVED</Slogan>
         </CompanyContainer>
         <SocialContainer>
-          <SocialIcons href="https://github.com">
+          <SocialIcons href="https://github.com/wj2kim" target="_blank">
             <AiFillGithub size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://tistory.com">
-            <AiFillGithub size="3rem" />
+          <SocialIcons href="https://instagram.com/pvvjk" target="_blank">
+            <AiFillInstagram size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://instagram.com">
-            <AiFillGithub size="3rem" />
+          <SocialIcons href="https://dont-stay-hungry.tistory.com" target="_blank">
+            <FillTistory size="3rem" />
           </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>

@@ -1,11 +1,9 @@
-import Acomplishments from "../components/Acomplishments/Acomplishments";
-import BgAnimation from "../components/BackgroundAnimation/BackgroundAnimation";
+import Blogs from "../components/Blogs/Blogs";
 import Intro from "../components/Intro/Intro";
 import Photo from "../components/Photo/Photo";
 import MyWords from "../components/MyWords/MyWords";
 import Projects from "../components/Projects/Projects";
-import Technologies from "../components/Technologies/Technologies";
-import Timeline from "../components/TimeLine/TimeLine";
+import Skills from "../components/Skills/Skills";
 import Welcome from "../components/Welcome/Welcome";
 import { Layout } from "../layout/Layout";
 import { Section } from "../styles/GlobalComponents";
@@ -18,13 +16,11 @@ const Home = () => {
         <Section grid full>
           <Intro />
           <Photo />
-          {/* <BgAnimation /> */}
           <MyWords />
         </Section>
         <Projects />
-        <Technologies />
-        {/* <Timeline /> */}
-        <Acomplishments />
+        <Skills />
+        <Blogs />
       </Layout>
     </>
   );
