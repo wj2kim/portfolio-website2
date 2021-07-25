@@ -7,7 +7,7 @@ export const Container = styled.div`
   grid-template-rows: 1fr;
   grid-column-gap: 2rem;
   padding: 1rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
@@ -19,14 +19,24 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.span`
-  font-size: 2.5rem;
+  font-size: 3rem;
 `;
 
 export const BackToHomeLink = styled.a`
   display: flex;
-  alignitems: center;
-  color: white;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+  transition: 0.4s ease;
+  &:hover {
+    color: #fff;
+    opacity: 1;
+    cursor: pointer;
+  }
+  svg {
+    fill: #e24c00;
+  }  
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 0.5rem;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -42,7 +52,9 @@ export const NavContainer = styled.div`
   grid-area: 1 / 2 / 2 / 4;
   display: flex;
   justify-content: space-around;
+  margin-top: 4px;
   @media ${(props) => props.theme.breakpoints.sm} {
+    align-items: center;
     grid-area: 2 / 2 / 3 / 5;
   }
 `;
@@ -50,9 +62,9 @@ export const IconsContainer = styled.div`
   grid-area: 1 / 5 / 2 / 6;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
   @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
+    align-items: start;
     grid-area: 1 / 4 / 2 / 6;
   }
 `;
@@ -125,9 +137,14 @@ export const SocialIcons = styled.a`
   color: white;
   border-radius: 50px;
   padding: 8px;
+  height: 46px;
   &:hover {
     background-color: #212d45;
     transform: scale(1.2);
     cursor: pointer;
   }
+`;
+
+export const FillTistory = styled.i`
+  fill: #ffffff;
 `;

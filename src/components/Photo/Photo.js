@@ -12,7 +12,7 @@ const Photo = () => {
 	}
 	
   return ( 
-		<Section row nopadding center>
+		<Section row nopadding left center>
 			<SectionImage onClick={handleClickImage}>
 				<div className="image-container">
 						<img className="model__left" src="/images/paul_left5.jpg" alt="profile_left" />

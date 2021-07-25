@@ -52,11 +52,11 @@ export const DetailedTitle = styled.p`
 	display: grid;
 	margin-bottom: 6px;
 	justify-content: center;
-	font-size: 4.5rem;
+	font-size: 2.6rem;
 	transition: all 0.3s ease;
 	transform: translateY(60px);
 	@media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `
 
@@ -70,14 +70,14 @@ export const StarIcon = styled.div`
 `;
 
 export const DetailedText = styled.p`
-	font-size: 2.5rem;
+	font-size: 2rem;
 	transform: translateY(60px);
 	.blue {
-		color: #010165;
+		color: #0e487e;
 		font-weight: bold;
 	}
 	.red { 
-		color: #990623;
+		color: #c82848;
 		font-weight: bold;
 	}
 	transition: all 0.3s ease;

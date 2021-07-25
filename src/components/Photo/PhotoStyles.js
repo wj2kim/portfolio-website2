@@ -21,4 +21,15 @@ export const SectionImage = styled.div`
     transform: translate(0%, 0%);
   }
 }
+@media ${props => props.theme.breakpoints.md}{
+  .image-container{
+    margin-top:60px;
+  }
+}
+
+@media ${props => props.theme.breakpoints.sm}{
+  .image-container{
+    margin-top:60px;
+  }
+}
 `;

@@ -19,7 +19,7 @@ const Technologies = () => (
     <SectionDivider />
     <br />
     <br />
-    <SectionTitle>Technologies</SectionTitle>
+    <SectionTitle main>Technologies</SectionTitle>
     <SectionText>
       asasdklfjalksfjksjfdsfj asdjfkljs dsfjdj kfjakdfj kdsklf lsdfj lkdjf ls
     </SectionText>

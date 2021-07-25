@@ -62,17 +62,17 @@ export const SocialIconsContainer = styled.div`
 export const CompanyContainer = styled.div`
   display: flex;
   align-items: baseline;
+  flex-direction: row;
   flex-wrap: wrap;
   margin-right: auto;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    flex-direction: column;
+	justify-content: center;
     align-items: baseline;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    display: flex;
-    flex-direction: column;
+	justify-content: center;
     margin: 0 0 32px;
     align-items: center;
   }
@@ -82,20 +82,26 @@ export const Slogan = styled.p`
   color: rgba(255, 255, 255, 0.5);
   min-width: 280px;
   letter-spacing: 0.02em;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 30px;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 4px;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 28px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     line-height: 22px;
-    font-size: 14px;
+    font-size: 12px;
     min-width: 100px;
   }
+`;
+
+export const SloganIcon = styled.div`
+	color: rgba(255,255,255,0.5);
+	margin: 0;
+	padding: 0;
 `;
 
 export const SocialContainer = styled.div`

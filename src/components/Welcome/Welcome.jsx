@@ -116,7 +116,7 @@ const Welcome = () => {
   const DetailedTemplate = () => (
     <>
       <StarIcon>
-        <AiTwotoneStar size="3rem" />
+        <AiTwotoneStar size="2.4rem" />
       </StarIcon>
       <DetailedTitle>김우정</DetailedTitle>
       <DetailedTitle>Paul WooJung Kim</DetailedTitle>

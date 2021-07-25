@@ -69,6 +69,7 @@ export const CardInfo = styled.p`
   font-style: 2rem;
   line-height: 24px;
   text-align: justify;
+  margin-bottom: 1.5rem;
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.3rem;
   }
@@ -79,18 +80,24 @@ export const UtilityList = styled.ul`
   padding: 0;
   display: flex;
   justify-content: space-around;
-  margin: 2.5rem 0;
+  margin: 1.5rem 0 2.5rem 0;
 `;
 
 export const ExternalLinks = styled.a`
-  color: #d4c0c0;
+  color: #ffffff;
   font-size: 1.6rem;
   padding: 1rem 1.5rem;
-  background: #6b3030;
+  background: #ffa700;
+  opacity: 0.8;
   border-radius: 15px;
   transition: 0.5s;
   &:hover {
-    background: #801414;
+    opacity: 1;
+  }
+  &.disabled {
+    opacity: 0.6;
+    filter: grayscale(60%);
+    pointer-events: none;
   }
 `;
 

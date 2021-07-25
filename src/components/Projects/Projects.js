@@ -21,12 +21,12 @@ import {
 import { projects } from "../../constants/constants";
 
 const Projects = () => (
-  <Section nopadding id="project">
+  <Section id="projects">
     <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <GridContainer>
       {projects.map(
-        ({ id, image, title, description, tags, source, visit }) => (
+        ({ id, image, title, description, tags, source, code }) => (
           <BlogCard key={id}>
             <Img src={image} />
             <TitleContent>
@@ -43,8 +43,8 @@ const Projects = () => (
               </TagList>
             </div>
             <UtilityList>
-              <ExternalLinks href={visit}>Code</ExternalLinks>
-              <ExternalLinks href={source}>Source</ExternalLinks>
+              <ExternalLinks href={code ? code : "#none"} target="_blank" className={ !code.length? "disabled" : ""}>Code</ExternalLinks>
+              <ExternalLinks href={source ? source : "#none"} target="_blank" className={ !source.length? "disabled" : ""}>Visit</ExternalLinks>
             </UtilityList>
           </BlogCard>
         )

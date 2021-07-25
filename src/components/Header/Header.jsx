@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { DiCssdeck } from "react-icons/di";
-// import FillTistory from "../../../public/images/icons";
+import FillTistory from "../../assets/icons/tistory.svg";
 
 import {
   Container,
@@ -20,8 +20,8 @@ const Header = () => {
     <Container>
       <TitleContainer>
         <Link href="/">
-          <BackToHomeLink>
-            <DiCssdeck size="4rem" /> <Title>Porfolio</Title>
+          <BackToHomeLink >
+            <DiCssdeck size="5rem" /> <Title>Paul's Porfolio</Title>
           </BackToHomeLink>
         </Link>
       </TitleContainer>
@@ -33,7 +33,12 @@ const Header = () => {
         </li>
         <li>
           <Link href="#tech">
-            <NavLink>Tech</NavLink>
+            <NavLink>Skills</NavLink>
+          </Link>
+        </li>
+        <li>
+          <Link href="#blogs">
+            <NavLink>Blogs</NavLink>
           </Link>
         </li>
         <li>
@@ -43,15 +48,14 @@ const Header = () => {
         </li>
       </NavContainer>
       <IconsContainer>
-        <SocialIcons href="https://github.com">
+        <SocialIcons href="https://github.com/wj2kim" target="_blank">
           <AiFillGithub size="3rem" />
         </SocialIcons>
-        <SocialIcons href="https://tistory.com">
-          <AiFillGithub size="3rem" />
+        <SocialIcons href="https://instagram.com/pvvjk" target="_blank">
+          <AiFillInstagram size="3rem" />
         </SocialIcons>
-        <SocialIcons href="https://instagram.com">
-          <AiFillGithub size="3rem" />
-          {/* <img src="../../../public/images/icons" alt="" /> */}
+        <SocialIcons href="https://dont-stay-hungry.tistory.com" target="_blank">
+          <FillTistory size="3rem" />
         </SocialIcons>
       </IconsContainer>
     </Container>

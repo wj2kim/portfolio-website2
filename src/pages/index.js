@@ -2,6 +2,7 @@ import Acomplishments from "../components/Acomplishments/Acomplishments";
 import BgAnimation from "../components/BackgroundAnimation/BackgroundAnimation";
 import Intro from "../components/Intro/Intro";
 import Photo from "../components/Photo/Photo";
+import MyWords from "../components/MyWords/MyWords";
 import Projects from "../components/Projects/Projects";
 import Technologies from "../components/Technologies/Technologies";
 import Timeline from "../components/TimeLine/TimeLine";
@@ -18,10 +19,11 @@ const Home = () => {
           <Intro />
           <Photo />
           {/* <BgAnimation /> */}
+          <MyWords />
         </Section>
         <Projects />
         <Technologies />
-        <Timeline />
+        {/* <Timeline /> */}
         <Acomplishments />
       </Layout>
     </>

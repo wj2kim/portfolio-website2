@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiOutlineCopyright } from "react-icons/ai";
 
 import { SocialIcons } from "../Header/HeaderStyles";
 import {
@@ -10,13 +10,14 @@ import {
   LinkList,
   LinkTitle,
   Slogan,
+  SloganIcon,
   SocialContainer,
   SocialIconsContainer,
 } from "./FooterStyles";
 
 const Footer = () => {
   return (
-    <FooterWrapper>
+    <FooterWrapper id="about">
       <LinkList>
         <LinkColumn>
           <LinkTitle>Call</LinkTitle>
@@ -29,7 +30,10 @@ const Footer = () => {
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>Innovating one project at a time</Slogan>
+          <SloganIcon>
+            <AiOutlineCopyright size="1.2rem" />
+          </SloganIcon>
+          <Slogan>PAUL WOOJUNG KIM 2021 - ALL RIGHTS RESERVED</Slogan>
         </CompanyContainer>
         <SocialContainer>
           <SocialIcons href="https://github.com">
