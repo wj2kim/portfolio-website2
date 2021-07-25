@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { GiClick } from "react-icons/Gi";
 
 export const FooterWrapper = styled.section`
   width: calc(100vw - 96px);
@@ -11,6 +12,16 @@ export const FooterWrapper = styled.section`
     padding: 0 16px 48px;
     width: calc(100vw - 32px);
   }
+`;
+
+export const IconItem = styled(GiClick)`
+  color: rgba(255, 255, 255, 0.75);
+  transition: 0.3s ease;
+  &:hover {
+    color: #fff;
+    left: 6px;
+  }
+  cursor: pointer;
 `;
 
 export const LinkItem = styled.a`

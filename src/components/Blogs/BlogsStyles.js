@@ -30,6 +30,9 @@ export const Box = styled.a`
   border-radius: 12px;
   height: auto;
   padding: 24px;
+  &:hover {
+    transform: scale(1.02);
+  }
 
   @media ${props => props.theme.breakpoints.md} {
     padding: 16px;

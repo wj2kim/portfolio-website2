@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
 import { Container, Text, DetailedContainer, DetailedText, DetailedTitle, StarIcon } from "./WelcomeStyle";
 import { name } from "../../constants/constants";
+import { detailed } from "../../constants/constants";
 import { welcomeAnimationSelector } from '../../recoil/atoms';
 import { AiTwotoneStar } from "react-icons/ai";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
@@ -9,7 +10,6 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 const Welcome = () => {
   const [welcomeAnimation, setWelcomeAnimation] = useRecoilState(welcomeAnimationSelector);
   const { basicAnimation, detailedAnimation} = welcomeAnimation;
-  console.log("basicAnimation", basicAnimation, "detaildAnimation", detailedAnimation);
   const titleEl = useRef(null);
   const containerEl = useRef(null);
   const splitText = [...name];
@@ -75,7 +75,7 @@ const Welcome = () => {
   }
 
   const handleContainerClick = () => {
-    // force complete;
+    /** force complete */
     completeImmediately();
   }
 
@@ -118,11 +118,11 @@ const Welcome = () => {
       <StarIcon>
         <AiTwotoneStar size="2.4rem" />
       </StarIcon>
-      <DetailedTitle>김우정</DetailedTitle>
-      <DetailedTitle>Paul WooJung Kim</DetailedTitle>
+      <DetailedTitle>{detailed.koreanName}</DetailedTitle>
+      <DetailedTitle>{detailed.englishName}</DetailedTitle>
       <DetailedContainer>
-        <DetailedText>Lives in Seoul, <span className="blue">South</span> <span className="red">Korea</span></DetailedText>
-        <DetailedText>Born in 1991 / 01 / 12</DetailedText>
+        <DetailedText>{detailed.location}<span className="red">{detailed.red}</span><span className="blue">{detailed.blue}</span></DetailedText>
+        <DetailedText>{detailed.birthDay}</DetailedText>
       </DetailedContainer>
     </>
   )

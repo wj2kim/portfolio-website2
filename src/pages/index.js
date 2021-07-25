@@ -7,12 +7,14 @@ import Skills from "../components/Skills/Skills";
 import Welcome from "../components/Welcome/Welcome";
 import { Layout } from "../layout/Layout";
 import { Section } from "../styles/GlobalComponents";
+import ScrollArrow from "../components/ScrollArrow/ScrollArrow";
 
 const Home = () => {
   return (
     <>
       <Welcome />
       <Layout>
+        <ScrollArrow />
         <Section grid full>
           <Intro />
           <Photo />

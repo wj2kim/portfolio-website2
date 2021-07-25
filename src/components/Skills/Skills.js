@@ -13,13 +13,13 @@ import {
   ListParagraph,
   ListTitle,
 } from "./SkillsStyles";
+import { skillIntro } from "../../constants/constants";
 
 const Skills = () => (
   <Section id="skills">
     <SectionDivider />
     <SectionTitle main>Skills</SectionTitle>
-    <SectionText>
-      I love making web interactive.<br/> These are the skills I am experienced with.
+    <SectionText dangerouslySetInnerHTML={{ __html: skillIntro}}>
     </SectionText>
     <List>
       <ListItem>

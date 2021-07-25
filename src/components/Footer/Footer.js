@@ -13,19 +13,33 @@ import {
   SloganIcon,
   SocialContainer,
   SocialIconsContainer,
+  IconItem,
 } from "./FooterStyles";
+import { footerData } from "../../constants/constants";
+import { welcomeAnimationSelector } from "../../recoil/atoms";
+import { useRecoilState } from "recoil";
 
 const Footer = () => {
+  const [welcomeAnimation, setWelcomeAnimation] = useRecoilState(welcomeAnimationSelector);
+
+  const handleClickImage = () => {
+		setWelcomeAnimation({...welcomeAnimation, "detailedAnimation": false });
+	}
+
   return (
-    <FooterWrapper id="about">
+    <FooterWrapper id="contact">
       <LinkList>
         <LinkColumn>
           <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:010-5660-6172">010-5660-6172</LinkItem>
+          <LinkItem href="tel:010-5660-6172">{footerData.phone}</LinkItem>
         </LinkColumn>
         <LinkColumn>
           <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:wj2kim@gmail.com">wj2kim@gmail.com</LinkItem>
+          <LinkItem href="mailto:wj2kim@gmail.com">{footerData.email}</LinkItem>
+        </LinkColumn>
+        <LinkColumn>
+          <LinkTitle>About Me</LinkTitle>
+          <IconItem size="2.5rem" style={{ marginLeft: "26px"}} onClick={handleClickImage}/>
         </LinkColumn>
       </LinkList>
       <SocialIconsContainer>
@@ -33,7 +47,7 @@ const Footer = () => {
           <SloganIcon>
             <AiOutlineCopyright size="1.2rem" />
           </SloganIcon>
-          <Slogan>PAUL WOOJUNG KIM 2021 - ALL RIGHTS RESERVED</Slogan>
+          <Slogan>{footerData.copyright}</Slogan>
         </CompanyContainer>
         <SocialContainer>
           <SocialIcons href="https://github.com/wj2kim" target="_blank">
