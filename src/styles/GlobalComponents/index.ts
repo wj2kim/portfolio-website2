@@ -1,13 +1,22 @@
 import styled from "styled-components";
+import {
+  ButtonType,
+  SectionType,
+  SectionTitleType,
+  SectionDividerType,
+  LinkType,
+} from "./types/globalTypes";
 
-export const Section = styled.section`
+export const Section = styled.section<SectionType>`
   display: ${(props) => (props.grid ? "grid" : "flex")};
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   padding: ${(props) => (props.nopadding ? "0" : "32px 48px 0")};
-  margin: ${(props) => (props.right? "0 auto 0 0" : props.left? "0 0 0 auto" : "0 auto")};
-  height: ${(props) => (props.full ? "calc(100vh - 99px)": "auto")};
-  align-items: ${(props) => (props.center? "center" : props.bottom ? "flex-end" : "")};
-  margin-bottom: ${(props) => (props.bottom? "90px" : "")};
+  margin: ${(props) =>
+    props.right ? "0 auto 0 0" : props.left ? "0 0 0 auto" : "0 auto"};
+  height: ${(props) => (props.full ? "calc(100vh - 99px)" : "auto")};
+  align-items: ${(props) =>
+    props.center ? "center" : props.bottom ? "flex-end" : ""};
+  margin-bottom: ${(props) => (props.bottom ? "90px" : "")};
   max-width: 1040px;
   box-sizing: content-box;
   position: relative;
@@ -15,7 +24,7 @@ export const Section = styled.section`
   grid-template-columns: 1fr 1fr 1fr;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    height: ${(props) => (props.full ? "auto": "auto")};
+    height: ${(props) => (props.full ? "auto" : "auto")};
     padding: 24px 48px 0;
     flex-direction: column;
     margin: 0 auto;
@@ -24,14 +33,14 @@ export const Section = styled.section`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: ${(props) => (props.nopadding ? "0" : "16px 16px 0")};
-    height: ${(props) => (props.full ? "auto": "auto")};
+    height: ${(props) => (props.full ? "auto" : "auto")};
     margin: 0 auto;
     flex-direction: column;
     grid-template-columns: 1fr;
   }
 `;
 
-export const SectionTitle = styled.h2`
+export const SectionTitle = styled.h2<SectionTitleType>`
   font-weight: 800;
   font-size: ${(props) => (props.main ? "34px" : "28px")};
   line-height: ${(props) => (props.main ? "40px" : "28px")};
@@ -87,7 +96,7 @@ export const SectionText = styled.p`
   }
 `;
 
-export const SectionDivider = styled.div`
+export const SectionDivider = styled.div<SectionDividerType>`
   width: 64px;
   height: 6px;
   background-color: #fff;
@@ -177,7 +186,7 @@ export const SecondaryBtn = styled.button`
   }
 `;
 
-export const ButtonBack = styled.div`
+export const ButtonBack = styled.div<ButtonType>`
   width: ${({ alt }) => (alt ? "150px" : "262px")};
   height: ${({ alt }) => (alt ? "52px" : "64px")};
   border-radius: 50px;
@@ -213,7 +222,7 @@ export const ButtonBack = styled.div`
   }
 `;
 
-export const ButtonFront = styled.button`
+export const ButtonFront = styled.button<ButtonType>`
   border: none;
   border-radius: 50px;
   color: #fff;
@@ -267,7 +276,7 @@ export const ButtonFront = styled.button`
   }
 `;
 
-export const LinkContainer = styled.div`
+export const LinkContainer = styled.div<LinkType>`
   margin-left: ${({ large }) => (large ? "24px" : "16px")};
   transition: 0.3s ease;
   justify-content: center;
@@ -288,7 +297,7 @@ export const LinkContainer = styled.div`
   }
 `;
 
-export const LinkIconImg = styled.div`
+export const LinkIconImg = styled.div<LinkType>`
   display: flex;
   height: ${({ large }) => (large ? "32px" : "24px")};
 

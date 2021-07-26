@@ -33,7 +33,7 @@ export const BackToHomeLink = styled.a`
   }
   svg {
     fill: #e24c00;
-  }  
+  }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
   }
@@ -110,24 +110,6 @@ export const ContactDropDown = styled.button`
   }
   @media ${(props) => props.theme.breakpoints.md} {
     padding: 0;
-  }
-`;
-
-export const NavProductsIcon = styled(IoIosArrowDropdown)`
-  margin-left: 8px;
-  display: flex;
-  align-self: center;
-  transition: 0.3s ease;
-  opacity: ${({ isOpen }) => (isOpen ? "1" : ".75")};
-  transform: ${({ isOpen }) => (isOpen ? "scaleY(-1)" : "scaleY(1)")};
-
-  &:hover {
-    opacity: 1;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 2px 0 0 2px;
-    width: 15px;
   }
 `;
 

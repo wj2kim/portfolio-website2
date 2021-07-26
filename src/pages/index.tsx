@@ -9,7 +9,7 @@ import { Layout } from "../layout/Layout";
 import { Section } from "../styles/GlobalComponents";
 import ScrollArrow from "../components/ScrollArrow/ScrollArrow";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Welcome />

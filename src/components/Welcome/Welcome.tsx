@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
 import { Container, Text, DetailedContainer, DetailedText, DetailedTitle, StarIcon } from "./WelcomeStyle";
-import { name } from "../../constants/constants";
-import { detailed } from "../../constants/constants";
+import { name, detailed } from "../../constants/constants";
 import { welcomeAnimationSelector } from '../../recoil/atoms';
 import { AiTwotoneStar } from "react-icons/ai";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
@@ -10,11 +9,11 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 const Welcome = () => {
   const [welcomeAnimation, setWelcomeAnimation] = useRecoilState(welcomeAnimationSelector);
   const { basicAnimation, detailedAnimation} = welcomeAnimation;
-  const titleEl = useRef(null);
-  const containerEl = useRef(null);
-  const splitText = [...name];
+  const titleEl = useRef<HTMLHeadingElement>(null);
+  const containerEl = useRef<HTMLDivElement>(null);
+  const splitText: string[] = name.split("");
   let char = 0;
-  let timer = null;
+  let timer: ReturnType<typeof setInterval>;
 
   const createTextMarkup = () => {
     return splitText.map((letter) => `<span>${letter}</span>`).join("");
@@ -47,12 +46,18 @@ const Welcome = () => {
     }
   }
 
-  const fadeIn = (element) => {
+  const fadeIn = (element: React.RefObject<HTMLDivElement>) => {
+    if (element.current === null) {
+      return;
+    }
     element.current.classList.remove("fadeOut");
     element.current.classList.add("fadeIn");
   }
 
-  const fadeOut = (element) => {
+  const fadeOut = (element: React.RefObject<HTMLDivElement>) => {
+    if (element.current === null) {
+      return;
+    }
     element.current.classList.remove("fadeIn");
     element.current.classList.add("fadeOut");
   }
@@ -60,7 +65,6 @@ const Welcome = () => {
   const complete = () => {
     if (timer) {
       clearInterval(timer);
-      timer = null;
     }
     const ms = !detailedAnimation ? 1500 : 1000;
     setTimeout(() => {
