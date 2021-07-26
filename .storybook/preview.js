@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Theme from "../src/styles/theme";
+import { RecoilRoot } from "recoil";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -34,10 +35,12 @@ export const parameters = {
 
 const wrapper = (Story) => {
 	return (
+    <RecoilRoot>
       <Theme>
         <Story />
         {}
       </Theme >
+    </RecoilRoot>
 	);
 };
 
