@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { DiCssdeck } from "react-icons/di";
 import FillTistory from "../../assets/icons/tistory.svg";
+import { useTracking } from "../../contexts/trackers";
 
 import {
   Container,
@@ -16,6 +17,19 @@ import {
 } from "./HeaderStyles";
 
 const Header = () => {
+  const { logEvent } = useTracking();
+
+  const handleClick = ( e : Event) => {
+    const target = e.target as HTMLAnchorElement;
+    if (target) {
+      logEvent({
+        category: 'Header Component',
+        action: `clicked ${target.dataset.id} on the header`,
+        label: 'Special Label'
+      })
+    }
+  }
+
   return (
     <Container>
       <TitleContainer>
@@ -48,14 +62,14 @@ const Header = () => {
         </li>
       </NavContainer>
       <IconsContainer>
-        <SocialIcons href="https://github.com/wj2kim" target="_blank">
-          <AiFillGithub size="3rem" />
+        <SocialIcons href="https://github.com/wj2kim" target="_blank" >
+          <AiFillGithub data-id="github-icon"size="3rem" onClick={handleClick} />
         </SocialIcons>
         <SocialIcons href="https://instagram.com/pvvjk" target="_blank">
-          <AiFillInstagram size="3rem" />
+          <AiFillInstagram data-id="instagram-icon" size="3rem" onClick={handleClick} />
         </SocialIcons>
-        <SocialIcons href="https://dont-stay-hungry.tistory.com" target="_blank">
-          <FillTistory size="3rem" />
+        <SocialIcons href="https://dont-stay-hungry.tistory.com" target="_blank" >
+          <FillTistory data-id="tistory-icon" size="3rem" onClick={handleClick} />
         </SocialIcons>
       </IconsContainer>
     </Container>

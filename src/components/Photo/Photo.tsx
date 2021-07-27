@@ -3,12 +3,19 @@ import { useRecoilState } from "recoil";
 import { Section } from "../../styles/GlobalComponents";
 import { SectionImage } from "./PhotoStyles";
 import { welcomeAnimationSelector } from "../../recoil/atoms";
+import { useTracking } from "../../contexts/trackers";
  
 const Photo = () => {
 	const [welcomeAnimation, setWelcomeAnimation] = useRecoilState(welcomeAnimationSelector);
+	const { logEvent } = useTracking();
 
 	const handleClickImage = () => {
 		setWelcomeAnimation({...welcomeAnimation, "detailedAnimation": false });
+		logEvent({
+			category: 'Photo Component',
+			action: 'clicked photo on main view',
+			label: 'Special Label'
+		})
 	}
 	
   return ( 

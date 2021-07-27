@@ -28,7 +28,7 @@ export const projects = [
   {
     title: "Remote Meeting (WebRTC App)",
     description:
-      "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+      "Web browser based video conference application using JavaScript, TypeScript, React, and WebRTC. Enhanced user experience and performance by developing user-friendly interfaces and optimizing functionality.",
     image: "/images/projects/remoteMeeting_main.png",
     tags: ["JavaScript", "TypeScript", "React", "WebRTC"],
     source: "https://www.remotemeeting.com/",
@@ -38,7 +38,7 @@ export const projects = [
   {
     title: "Remote Meeting Admin",
     description:
-      "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+      "Creating new features, functionality and bug fixes of admin pages using JavaScript, JSP, Ajax. Communicating technical issues in an understandable manner to backend developers to ensure passing data efficient.",
     image: "/images/projects/remoteMeetingAdmin_main.png",
     tags: ["JavaScript", "Jquery", "JSP"],
     source: "https://www.remotemeeting.com/rmadmin",
@@ -48,7 +48,7 @@ export const projects = [
   {
     title: "Siren Order App",
     description:
-      "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+      "Built single page application, responsive web design page for handling coffee orders. Implemented Client order messaging using firebase cloud messaging.",
     image: "/images/projects/siren_order_main.png",
     tags: ["JavaScript", "React", "Redux", "Firebase"],
     source: "https://shrouded-castle-16616.herokuapp.com/",
@@ -58,7 +58,7 @@ export const projects = [
   {
     title: "Personal Porfolio Website 1",
     description:
-      "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+      "Self-designed personal portlio website using React and MaterializeCSS. Implemented interactions and responsiveness to the static single page.",
     image: "/images/projects/portfolio1_main.png",
     tags: ["JavaScript", "React", "MaterializeCSS"],
     source: "https://paulwoojungkim.netlify.app/",

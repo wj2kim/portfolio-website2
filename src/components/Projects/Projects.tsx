@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   BlogCard,
   CardInfo,
@@ -19,9 +18,24 @@ import {
   SectionTitle,
 } from "../../styles/GlobalComponents";
 import { projects } from "../../constants/constants";
+import { useTracking } from "../../contexts/trackers";
 
-const Projects = () => (
-  <Section id="projects">
+const Projects = () => {
+  const { logEvent } = useTracking();
+
+  const handleClick = ( e : Event) => {
+    const target = e.target as HTMLAnchorElement;
+    if (target) {
+      logEvent({
+        category: 'Project Component',
+        action: `clicked ${target.dataset.id} on the project`,
+        label: 'Special Label'
+      })
+    }
+  }
+
+  return ( 
+    <Section id="projects">
     <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <GridContainer>
@@ -43,14 +57,31 @@ const Projects = () => (
               </TagList>
             </div>
             <UtilityList>
-              <ExternalLinks href={code ? code : "#none"} target="_blank" className={ !code.length? "disabled" : ""}>Code</ExternalLinks>
-              <ExternalLinks href={source ? source : "#none"} target="_blank" className={ !source.length? "disabled" : ""}>Visit</ExternalLinks>
+              <ExternalLinks 
+                data-id={`${title}-Code`}
+                href={code ? code : "#none"} 
+                target="_blank" 
+                className={ !code.length? "disabled" : ""} 
+                onClick={handleClick}
+              > 
+                Code 
+              </ExternalLinks>
+              <ExternalLinks 
+                data-id={`${title}-Visit`}
+                href={source ? source : "#none"} 
+                target="_blank" 
+                className={ !source.length? "disabled" : ""}
+                onClick={handleClick}
+              >
+                Visit
+              </ExternalLinks>
             </UtilityList>
           </BlogCard>
         )
       )}
     </GridContainer>
   </Section>
-);
+  )
+};
 
 export default Projects;

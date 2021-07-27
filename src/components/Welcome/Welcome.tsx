@@ -4,6 +4,7 @@ import { Container, Text, DetailedContainer, DetailedText, DetailedTitle, StarIc
 import { name, detailed } from "../../constants/constants";
 import { welcomeAnimationSelector } from '../../recoil/atoms';
 import { AiTwotoneStar } from "react-icons/ai";
+import { useTracking } from "../../contexts/trackers";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const Welcome = () => {
@@ -12,6 +13,7 @@ const Welcome = () => {
   const titleEl = useRef<HTMLHeadingElement>(null);
   const containerEl = useRef<HTMLDivElement>(null);
   const splitText: string[] = name.split("");
+  const { logEvent } = useTracking();
   let char = 0;
   let timer: ReturnType<typeof setInterval>;
 
@@ -81,6 +83,11 @@ const Welcome = () => {
   const handleContainerClick = () => {
     /** force complete */
     completeImmediately();
+    logEvent({
+      category: 'Welcome Component',
+      action: 'clicked welcome animation',
+      label: 'Special Label'
+    });
   }
 
   const useAnimationEffect = () => {
