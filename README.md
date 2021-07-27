@@ -1,3 +1,3 @@
 # Personal Portfolio Website2
 
-React + Typescript + Storybook
+SEO personal portfolio website Using React, Typescript, Storybook, googleGA, and Recoil
