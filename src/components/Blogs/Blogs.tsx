@@ -8,11 +8,12 @@ import {
 import { Box, Boxes, BoxImage, BoxTitle, BoxText } from "./BlogsStyles";
 import { blogs } from "../../constants/constants";
 import { useTracking } from "../../contexts/trackers";
+import { ClickMouseEvent } from "../../types/commonType";
 
 const Blogs = () => {
   const { logEvent } = useTracking();
 
-  const handleClick = ( e : Event) => {
+  const handleClick = ( e : ClickMouseEvent) => {
     const target = e.target as HTMLAnchorElement;
     const anchorTag = target.closest('a');
     if (anchorTag) {

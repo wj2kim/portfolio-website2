@@ -19,11 +19,14 @@ import {
 } from "../../styles/GlobalComponents";
 import { projects } from "../../constants/constants";
 import { useTracking } from "../../contexts/trackers";
+import { ClickMouseEvent} from "../../types/commonType";
+
+
 
 const Projects = () => {
   const { logEvent } = useTracking();
 
-  const handleClick = ( e : Event) => {
+  const handleClick = ( e : ClickMouseEvent) => {
     const target = e.target as HTMLAnchorElement;
     if (target) {
       logEvent({

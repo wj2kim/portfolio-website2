@@ -19,14 +19,16 @@ import { footerData } from "../../constants/constants";
 import { welcomeAnimationSelector } from "../../recoil/atoms";
 import { useRecoilState } from "recoil";
 import { useTracking } from "../../contexts/trackers";
+import { ClickMouseEvent } from "../../types/commonType";
 
 const Footer = () => {
   const [welcomeAnimation, setWelcomeAnimation] = useRecoilState(welcomeAnimationSelector);
   const { logEvent } = useTracking();
 
-  const handleClickIcon = ( e : Event) => {
-    const target = e.target as HTMLAnchorElement;
-    if (target) {
+  const handleClickIcon = ( e : ClickMouseEvent) => {
+    const target = e.target as SVGElement;
+    const anchorTag = target.closest("a");
+    if (anchorTag) {
       logEvent({
         category: 'Footer Component',
         action: `clicked ${target.dataset.id} on the footer`,
@@ -63,11 +65,11 @@ const Footer = () => {
           <Slogan>{footerData.copyright}</Slogan>
         </CompanyContainer>
         <SocialContainer>
-          <SocialIcons href="https://github.com/wj2kim" target="_blank">
-            <AiFillGithub data-id="github-icon"size="3rem" onClick={handleClickIcon} />
+          <SocialIcons href="https://github.com/wj2kim" target="_blank" onClick={handleClickIcon}>
+            <AiFillGithub data-id="github-icon"size="3rem"  />
           </SocialIcons>
-          <SocialIcons href="https://instagram.com/pvvjk" target="_blank">
-            <AiFillInstagram data-id="instagram-icon" size="3rem" onClick={handleClickIcon} />
+          <SocialIcons href="https://instagram.com/pvvjk" target="_blank" onClick={handleClickIcon}>
+            <AiFillInstagram data-id="instagram-icon" size="3rem"  />
           </SocialIcons>
           <SocialIcons href="https://dont-stay-hungry.tistory.com" target="_blank">
             <FillTistory data-id="tistory-icon" size="3rem" onClick={handleClickIcon} />
