@@ -12,7 +12,6 @@ export const IntroSection = styled.div`
     rgba(255, 255, 255, 0.66) 60.15%
   );
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   h2 {
     font-weight: 600;
     font-size: 30px;
