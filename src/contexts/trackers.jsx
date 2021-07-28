@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Router from 'next/router'
 import { GA_TRACKING_ID } from "../config/config";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const TrackingContext = React.createContext();
 
