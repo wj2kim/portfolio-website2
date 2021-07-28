@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GiClick } from "react-icons/Gi";
+import { GiClick } from "react-icons/gi";
 
 export const FooterWrapper = styled.section`
   width: calc(100vw - 96px);
@@ -79,12 +79,12 @@ export const CompanyContainer = styled.div`
   margin-right: auto;
 
   @media ${(props) => props.theme.breakpoints.md} {
-	justify-content: center;
+    justify-content: center;
     align-items: baseline;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-	justify-content: center;
+    justify-content: center;
     margin: 0 0 32px;
     align-items: center;
   }
@@ -111,9 +111,9 @@ export const Slogan = styled.p`
 `;
 
 export const SloganIcon = styled.div`
-	color: rgba(255,255,255,0.5);
-	margin: 0;
-	padding: 0;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 0;
 `;
 
 export const SocialContainer = styled.div`
