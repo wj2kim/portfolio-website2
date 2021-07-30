@@ -115,33 +115,33 @@ const Welcome = () => {
     disableScrollOnBody();
   }, [detailedAnimation]);
 
-
-  const BasicTemplate = () => (
-    <Text
-      className="user__name"
-      dangerouslySetInnerHTML={{ __html: createTextMarkup() }}
-      ref={titleEl}
-    ></Text>
-  )
-
-  const DetailedTemplate = () => (
-    <>
-      <StarIcon>
-        <AiTwotoneStar size="2.4rem" />
-      </StarIcon>
-      <DetailedTitle>{detailed.koreanName}</DetailedTitle>
-      <DetailedTitle>{detailed.englishName}</DetailedTitle>
-      <DetailedContainer>
-        <DetailedText>{detailed.location}<span className="red">{detailed.red}</span><span className="blue">{detailed.blue}</span></DetailedText>
-        <DetailedText>{detailed.birthDay}</DetailedText>
-      </DetailedContainer>
-    </>
-  )
+  const template = {
+    _basic: () => (
+      <Text
+        className="user__name"
+        dangerouslySetInnerHTML={{ __html: createTextMarkup() }}
+        ref={titleEl}
+      ></Text>
+    ),
+    _detailed: () => (
+      <>
+        <StarIcon>
+          <AiTwotoneStar size="2.4rem" />
+        </StarIcon>
+        <DetailedTitle>{detailed.koreanName}</DetailedTitle>
+        <DetailedTitle>{detailed.englishName}</DetailedTitle>
+        <DetailedContainer>
+          <DetailedText>{detailed.location}<span className="red">{detailed.red}</span><span className="blue">{detailed.blue}</span></DetailedText>
+          <DetailedText>{detailed.birthDay}</DetailedText>
+        </DetailedContainer>
+      </>
+    )
+  }
 
   return (
     <Container ref={containerEl} onClick={handleContainerClick}>
-      { !detailedAnimation && DetailedTemplate() }
-      { !basicAnimation && BasicTemplate() }
+      { !detailedAnimation && <template._detailed /> }
+      { !basicAnimation && <template._basic /> }
     </Container>
   )
 };
