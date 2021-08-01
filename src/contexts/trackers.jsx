@@ -6,7 +6,7 @@ import ReactGA from "react-ga4";
 const TrackingContext = React.createContext();
 
 const TrackingProvider = (props) => {
-	const [analytics, setAnalytics] = useState({ isInitialized: false, trackers: ['myDefaultTracker']});
+	const [analytics, setAnalytics] = useState({ isInitialized: false, trackers: [GA_TRACKING_ID]});
 
 	const handleRouteChange = url  => {
 		ReactGA.set({ page:  url }, analytics.trackers);
@@ -54,7 +54,7 @@ const TrackingProvider = (props) => {
 			ReactGA.initialize(GA_TRACKING_ID);			
 			Router.events.on('routeChangeComplete', handleRouteChange);
 			const userAgent = navigator.userAgent;
-			ReactGA.set({ userAgent:  userAgent }, trackers);
+			ReactGA.set({ userId:  userAgent });
 
 			setAnalytics(prev  => ({
 				...prev,
