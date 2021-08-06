@@ -29,9 +29,9 @@ const Projects = () => {
   let observer = null;
 
   useEffect(() => {
-    if ("intersectionObserver" in window &&
-      "intersctionObeserverEntry" in window &&
-      "intersectionRatio" in window.IntersectionObserverEntry.prototype) {
+    if ('IntersectionObserver' in window &&
+      'IntersectionObserverEntry' in window &&
+      'intersectionRatio' in window.IntersectionObserverEntry.prototype){
       
       const options = {
         rootMargin: "30px 0px",
@@ -42,24 +42,23 @@ const Projects = () => {
         entries.forEach((entry) => {
           const target = entry.target;
           target.classList.add("animation");
-          const targetImage = target.querySelctor("img");
+          const targetImage = target.querySelector("img");
           const ratio = entry.intersectionRatio;
-          console.log("targetImage", targetImage);
           switch(true) {
-            case ( ratio <= 1 && ratio > 0.95) :
+            case ( ratio <= 1 && ratio > 0.55) :
               target.style.opacity = 1;
               target.style.transform = "scale(1.0)";
               !targetImage.src && (targetImage.src = targetImage.dataset.src);
-
-            case ( ratio <= 0.95 && ratio >= 0.5 ):
+              return;
+            case ( ratio <= 0.55 && ratio >= 0.2 ):
               target.style.opacity = 0.5;
-              target.style.transform = 'scale(0.95)';
+              target.style.transform = 'scale(0.96)';
               !targetImage.src && (targetImage.src = targetImage.dataset.src);
               return;
 
-            case ( ratio < 0.5 ):
+            case ( ratio < 0.2 ):
               target.style.opacity = 0.15;
-              target.style.transform = 'scale(0.85)';
+              target.style.transform = 'scale(0.92)';
               return;
 
               default:
@@ -83,7 +82,7 @@ const Projects = () => {
       const targets = containerEl.current.querySelectorAll('.card')
       targets.forEach((target) => observer.observe(target));
     }
-  }, [])
+  })
 
   const handleClick = ( e : ClickMouseEvent) => {
     const target = e.target as HTMLAnchorElement;
@@ -98,7 +97,7 @@ const Projects = () => {
 
   const Template = ({ id, image, title, description, tags, source, code }: ProjectType) => (
     <BlogCard key={id} className="card">
-      <Img src="" data-src={image} />
+      <Img data-src={image} />
       <TitleContent>
         <HeaderThree>{title}</HeaderThree>
         <Hr />
@@ -152,7 +151,7 @@ const Projects = () => {
           code={code} 
         />
       )
-    )};
+    )}
     </GridContainer>
   </Section>
   )
