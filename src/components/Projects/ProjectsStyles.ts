@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 export const Img = styled.img`
   width: 370px;
-  height: 225px;
+  height: 205px;
   object-fit: cover;
   overflow: hidden;
   border-radius: 10px;
@@ -42,6 +42,7 @@ export const BlogCard = styled(Card)`
   width: 400px;
 `;
 export const TitleContent = styled.div`
+  margin-top: 10px;
   text-align: center;
   z-index: 20;
   width: 100%;
@@ -80,7 +81,7 @@ export const CardInfo = styled.p`
   font-style: 2rem;
   line-height: 24px;
   text-align: justify;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 1.2rem;
   }
@@ -252,23 +253,28 @@ export const EmptyContainer = styled(Card)`
 
 export const EmptyImage = styled(skeletonAnimation)`
   width: 370px;
-  height: 225px;
+  height: 205px;
   border-radius: 10px;
 `;
 
 export const EmptyTitle = styled(skeletonAnimation)`
-  width: 350px;
+  width: 330px;
   height: 30px;
 `;
 
 export const EmptySubtitle = styled(skeletonAnimation)`
-  width: 300px;
-  height: 40px;
+  width: 330px;
+  height: 30px;
 `;
 
 export const EmptyContent = styled(skeletonAnimation)`
   width: 320px;
   height: 150px;
+`;
+
+export const EmptySubContent = styled(skeletonAnimation)`
+  width: 80px;
+  height: 30px;
 `;
 
 export const EmptyList = styled.div`

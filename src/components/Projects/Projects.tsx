@@ -22,7 +22,8 @@ import {
   EmptyContent,
   EmptyList,
   EmptyButton,
-  EmptySubtitle
+  EmptySubtitle,
+  EmptySubContent
 } from "./ProjectsStyles";
 import {
   Section,
@@ -179,6 +180,7 @@ const Projects = () => {
         <EmptyImage />
         <EmptyTitle />
         <EmptyContent/>
+        <EmptySubContent />
         <EmptySubtitle />
         <EmptyList>
           <EmptyButton />
