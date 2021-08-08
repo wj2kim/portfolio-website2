@@ -5,7 +5,6 @@ import { name, detailed } from "../../constants/constants";
 import { welcomeAnimationSelector } from '../../recoil/atoms';
 import { AiTwotoneStar } from "react-icons/ai";
 import { useTracking } from "../../contexts/trackers";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const Welcome = () => {
   const [welcomeAnimation, setWelcomeAnimation] = useRecoilState(welcomeAnimationSelector);
