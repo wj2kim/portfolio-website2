@@ -9,3 +9,13 @@ export type DetailedType = {
   blue: string;
   birthDay: string;
 };
+
+export type ProjectType = {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  source: string;
+  code: string;
+  id: number;
+};
