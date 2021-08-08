@@ -33,13 +33,14 @@ import { projects } from "../../constants/constants";
 import { useTracking } from "../../contexts/trackers";
 import { ClickMouseEvent} from "../../types/commonType";
 import { ProjectType } from "../../constants/types";
-import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
-
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Projects = () => {
   const { logEvent } = useTracking();
   const containerEl = useRef<HTMLDivElement>(null);
-  const [ checked, setChecked ] = useState<boolean>(true);
+  const [ storedValue, setValue ] = useLocalStorage("animation__effect", true);
+  const [ checked, setChecked ] = useState<boolean>(storedValue);
   const [ loading, setLoading ] = useState<boolean>(false);
 
   const options: IntersectionObserverInit = {
@@ -77,7 +78,7 @@ const Projects = () => {
     })
   }
 
-  const isActive = useIntersectionObserver({refElement: containerEl, effect, options, isActivate: checked}) || false;
+  const isActive = useIntersectionObserver({refElement: containerEl, effect, options, isActivate: storedValue}) || false;
 
   const disableEffect = (containerEl: React.RefObject<HTMLDivElement>) => {
     const targets = containerEl.current?.querySelectorAll("img");
@@ -111,6 +112,7 @@ const Projects = () => {
     const handleCheck = () => {
       setChecked(!checked)
       setLoading(true);
+      setValue(!checked);
       logEvent({
         category: 'Project Component',
         action: `Animation Effect Button Active? ${!isActive ? "ON" : "OFF"}`,

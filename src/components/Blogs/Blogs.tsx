@@ -9,7 +9,7 @@ import { Box, Boxes, BoxImage, BoxTitle, BoxText } from "./BlogsStyles";
 import { blogs } from "../../constants/constants";
 import { useTracking } from "../../contexts/trackers";
 import { ClickMouseEvent, OnMouseOverEvent} from "../../types/commonType";
-import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 const Blogs = () => {
   const { logEvent } = useTracking();

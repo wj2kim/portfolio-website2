@@ -7,7 +7,7 @@ type Params = {
   isActivate?: boolean;
 };
 
-export const useIntersectionObserver = ({
+const useIntersectionObserver = ({
   refElement,
   effect,
   options,
@@ -51,3 +51,5 @@ export const useIntersectionObserver = ({
 
   return isActive;
 };
+
+export default useIntersectionObserver;
