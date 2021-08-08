@@ -53,8 +53,6 @@ const TrackingProvider = (props) => {
 		if (!isInitialized) {
 			ReactGA.initialize(GA_TRACKING_ID);			
 			Router.events.on('routeChangeComplete', handleRouteChange);
-			const userAgent = navigator.userAgent;
-			ReactGA.set({ userId:  userAgent });
 
 			setAnalytics(prev  => ({
 				...prev,
