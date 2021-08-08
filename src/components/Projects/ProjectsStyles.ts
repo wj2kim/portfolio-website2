@@ -7,7 +7,7 @@ export const Img = styled.img`
   overflow: hidden;
   border-radius: 10px;
   margin-top: 15px;
-  background-color: currentcolor;
+  background-color: hsl(204, 23.8%, 96.9%, 0.6);
 `;
 
 export const GridContainer = styled.section`

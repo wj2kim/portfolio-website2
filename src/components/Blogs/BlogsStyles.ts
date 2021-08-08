@@ -34,6 +34,14 @@ export const Box = styled.a`
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
   }
+  &.animation__done {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &.animation__start {
+    opacity: 0.4;
+    transform: scale(0.92);
+  }
   &:hover {
     transform: scale(1.02);
   }
@@ -142,5 +150,5 @@ export const BoxImage = styled.img`
   height: 100px;
   object-fit: cover;
   overflow: hidden;
-  background-color: hsl(204, 23.8%, 96.9%);
+  background-color: hsl(204, 23.8%, 96.9%, 0.5);
 `;
