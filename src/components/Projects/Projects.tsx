@@ -134,7 +134,7 @@ const Projects = () => {
   const Template = ({ id, image, title, description, tags, source, code }: ProjectType) => {
 
     const Card = () => (
-      <BlogCard key={id} className="card" >
+      <BlogCard key={id} className="observe" >
         <Img data-src={image} />
         <TitleContent>
           <HeaderThree>{title}</HeaderThree>
@@ -173,7 +173,7 @@ const Projects = () => {
     )
 
     const EmptyCard = () => (
-      <EmptyContainer key={id} className="card">
+      <EmptyContainer key={id} >
         <EmptyImage />
         <EmptyTitle />
         <EmptyContent/>

@@ -4,16 +4,16 @@ type Params = {
   refElement: RefObject<Element>;
   effect: (entries: IntersectionObserverEntry[]) => void;
   options: IntersectionObserverInit;
-  isActivate: boolean;
+  isActivate?: boolean;
 };
 
 export const useIntersectionObserver = ({
   refElement,
   effect,
   options,
-  isActivate,
+  isActivate = true,
 }: Params) => {
-  const [isActive, setActivationState] = useState<Boolean>(false);
+  const [isActive, setActivationState] = useState<Boolean>(true);
   const { threshold, root, rootMargin } = options;
   const updateEntry = (entries: IntersectionObserverEntry[]): void => {
     effect(entries);
@@ -41,7 +41,7 @@ export const useIntersectionObserver = ({
       updateEntry,
       options
     );
-    const targets = element.querySelectorAll(".card");
+    const targets = element.querySelectorAll(".observe");
     targets.forEach((target) => observer.observe(target));
 
     return () => {
