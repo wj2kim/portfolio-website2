@@ -1,14 +1,23 @@
 import React, { useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
-import { Container, Text, DetailedContainer, DetailedText, DetailedTitle, StarIcon } from "./WelcomeStyle";
+import {
+  Container,
+  Text,
+  DetailedContainer,
+  DetailedText,
+  DetailedTitle,
+  StarIcon,
+} from "./WelcomeStyle";
 import { name, detailed } from "../../constants/constants";
-import { welcomeAnimationSelector } from '../../recoil/atoms';
+import { welcomeAnimationSelector } from "../../recoil/atoms";
 import { AiTwotoneStar } from "react-icons/ai";
 import { useTracking } from "../../contexts/trackers";
 
 const Welcome = () => {
-  const [welcomeAnimation, setWelcomeAnimation] = useRecoilState(welcomeAnimationSelector);
-  const { basicAnimation, detailedAnimation} = welcomeAnimation;
+  const [welcomeAnimation, setWelcomeAnimation] = useRecoilState(
+    welcomeAnimationSelector
+  );
+  const { basicAnimation, detailedAnimation } = welcomeAnimation;
   const titleEl = useRef<HTMLHeadingElement>(null);
   const containerEl = useRef<HTMLDivElement>(null);
   const splitText: string[] = name.split("");
@@ -32,10 +41,6 @@ const Welcome = () => {
     return false;
   };
 
-  const disableScrollOnBody = () => {
-    document.body.classList.add("disable-scroll");
-  };
-
   const enableScrollOnBody = () => {
     document.body.classList.remove("disable-scroll");
   };
@@ -45,7 +50,7 @@ const Welcome = () => {
     if (!isFinished) {
       window.requestAnimationFrame(step);
     }
-  }
+  };
 
   const fadeIn = (element: React.RefObject<HTMLDivElement>) => {
     if (element.current === null) {
@@ -53,7 +58,7 @@ const Welcome = () => {
     }
     element.current.classList.remove("fadeOut");
     element.current.classList.add("fadeIn");
-  }
+  };
 
   const fadeOut = (element: React.RefObject<HTMLDivElement>) => {
     if (element.current === null) {
@@ -61,7 +66,7 @@ const Welcome = () => {
     }
     element.current.classList.remove("fadeIn");
     element.current.classList.add("fadeOut");
-  }
+  };
 
   const complete = () => {
     if (timer) {
@@ -76,18 +81,18 @@ const Welcome = () => {
   const completeImmediately = () => {
     fadeOut(containerEl);
     enableScrollOnBody();
-    setWelcomeAnimation({"detailedAnimation": true, "basicAnimation": true});
-  }
+    setWelcomeAnimation({ detailedAnimation: true, basicAnimation: true });
+  };
 
   const handleContainerClick = () => {
     /** force complete */
     completeImmediately();
     logEvent({
-      category: 'Welcome Component',
-      action: 'clicked welcome animation',
-      label: 'Special Label'
+      category: "Welcome Component",
+      action: "clicked welcome animation",
+      label: "Special Label",
     });
-  }
+  };
 
   const useAnimationEffect = () => {
     if (window.requestAnimationFrame) {
@@ -95,11 +100,11 @@ const Welcome = () => {
     } else {
       timer = setInterval(onTick, 30);
     }
-  }
+  };
 
   const withoutAnimationEffect = () => {
     complete();
-  }
+  };
 
   useEffect(() => {
     if (basicAnimation && detailedAnimation) {
@@ -111,7 +116,6 @@ const Welcome = () => {
     } else {
       withoutAnimationEffect();
     }
-    disableScrollOnBody();
   }, [detailedAnimation]);
 
   const template = {
@@ -130,19 +134,23 @@ const Welcome = () => {
         <DetailedTitle>{detailed.koreanName}</DetailedTitle>
         <DetailedTitle>{detailed.englishName}</DetailedTitle>
         <DetailedContainer>
-          <DetailedText>{detailed.location}<span className="red">{detailed.red}</span><span className="blue">{detailed.blue}</span></DetailedText>
+          <DetailedText>
+            {detailed.location}
+            <span className="red">{detailed.red}</span>
+            <span className="blue">{detailed.blue}</span>
+          </DetailedText>
           <DetailedText>{detailed.birthDay}</DetailedText>
         </DetailedContainer>
       </>
-    )
-  }
+    ),
+  };
 
   return (
     <Container ref={containerEl} onClick={handleContainerClick}>
-      { !detailedAnimation && <template._detailed /> }
-      { !basicAnimation && <template._basic /> }
+      {!detailedAnimation && <template._detailed />}
+      {!basicAnimation && <template._basic />}
     </Container>
-  )
+  );
 };
 
 export default Welcome;

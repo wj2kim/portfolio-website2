@@ -8,8 +8,13 @@ import Welcome from "../components/Welcome/Welcome";
 import { Layout } from "../layout/Layout";
 import { Section } from "../styles/GlobalComponents";
 import ScrollArrow from "../components/ScrollArrow/ScrollArrow";
+import { useEffect } from "react";
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Welcome />

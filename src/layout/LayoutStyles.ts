@@ -12,7 +12,7 @@ export const Container = styled.div`
     align-items: center;
     height: 20px;
     justify-content: center;
-    z-index: 1000;
+    z-index: 2;
     cursor: pointer;
     animation: fadeIn 0.3s;
     transition: opacity 0.4s;

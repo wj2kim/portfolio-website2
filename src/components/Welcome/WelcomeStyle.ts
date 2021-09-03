@@ -2,22 +2,24 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: ${(props) => props.theme.colors.background1};
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: grid;
   align-items: center;
   align-content: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
+  z-index: 3;
   &.fadeOut {
-    visibility: hidden;
     opacity: 0;
-    transition: visibility 0s linear 600ms, opacity 600ms;
+    transition: all 0s linear 600ms, opacity 600ms;
+    visibility: hidden;
   }
   &.fadeIn {
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
   }
 `;
 
